@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="my-3">
+        <input type="text" class="form-control" placeholder="Buscar plato" (keyup)="Search($event)">
+      </div>
+
+
+    <div *ngIf="!loading" class="row">
+        <div class="col-xl-6 col-md-12 mb-4" *ngFor="let plato of platos">
+            <app-plato [plato]="plato" [menu]="false"></app-plato>
+        </div>
+
+        <h3 *ngIf="platos?.length==0">Prueba buscar un Plato!</h3>
+        <h3 *ngIf="platos==null">No se encontraron platos para la busqueda.</h3>
+        
+      
+    </div>      
+
+
+    <div *ngIf="loading" class="row spinner">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+    </div>
+</div>

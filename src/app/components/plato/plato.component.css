@@ -1,0 +1,24 @@
+@media only screen and (max-width: 600px) {
+  img {
+    width: 100px !important;
+  }
+}
+
+img {
+  width: 130px;
+  margin-right: 15px;
+}
+
+.card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card {
+  min-height: 200px;
+}
+
+p {
+  margin-bottom: 0;
+}

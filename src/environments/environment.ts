@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  url:{
+    url: 'https://api.spoonacular.com/recipes',
+    apiKey: 'bdd5388ba107401990fff8ec486bce15'
+  }
 };
 
 /*

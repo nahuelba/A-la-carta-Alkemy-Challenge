@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm-6 col-md-4">
+        <div class="login-card">
+            <form [formGroup]="LoginForm">
+                <h3>Ingresar</h3>
+                <input type="text" class="form-control" placeholder="Email" formControlName="email">
+                <input type="password" class="form-control" placeholder="Password" formControlName="password">
+                <div class="alert alert-danger" role="alert" *ngIf="LoginForm.invalid && LoginForm.touched">
+                    Por favor, complete los campos o ingrese un email valido.
+                  </div>
+                  
+                <button *ngIf="!loading" class="btn btn-lg btn-primary btn-block" (click)="login()">
+                   Enviar
+                </button>
+   
+                  <button *ngIf="loading" class="btn btn-lg btn-primary btn-block" type="button" disabled>
+                      Procesando
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  </button>
+            </form>
+        </div>
+     
+    </div>
+    </div>
+</div>

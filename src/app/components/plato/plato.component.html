@@ -1,0 +1,35 @@
+<div class="card">
+  <div class="card-body">
+    <img
+      [src]="plato.image"
+      class="rounded"
+      alt=""
+    />
+
+    <div >
+    <h4>{{plato.title}}</h4>
+    <span *ngIf="detail">
+
+      <p>Precio: $ {{plato.pricePerServing}}</p>
+      <p>Tiempo de Preparación: {{plato.readyInMinutes}} min</p>
+      <p>Health Score: {{plato.healthScore}}</p>
+      <p>Vegano: {{(plato.vegan ? 'Si':'No')}}</p>
+    </span>
+    </div>
+
+    <div style="display:flex;">
+
+      
+      <button class="btn" style="margin-right: 15px;" (click)="detail=!detail">
+        <i class="bi bi-card-list"></i>
+      </button>
+      <button *ngIf="menu" class="btn btn-danger" (click)="PlatosService.eliminarPlato(plato)">
+        <i class="bi bi-trash"></i>
+      </button>
+      <button *ngIf="!menu" class="btn btn-success" (click)="PlatosService.agregarPlato(plato)">
+        <i class="bi bi-plus-square"></i>
+      </button>
+      
+    </div>
+  </div>
+</div>
